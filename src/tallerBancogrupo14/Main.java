@@ -1,15 +1,38 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
-    public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+package tallerBancogrupo14;
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+public class Main {
+
+    public static void main(String[] args) {
+
+        cuentaBancaria cuenta1 = new cuentaAhorro("001", "Juan Castro", 2000000, 2.5, 500000 );
+        cuentaBancaria cuenta2 = new cuentaCorriente("002", "Brayan Castro S.A.S", 3000000, 8000, 500000);
+        cuentaBancaria cuenta3 = new cuentaInversion("003", "Ryan Castro", 5000000, 8.0 ,12, 50000);
+
+        System.out.println("======================================");
+        System.out.println("Descripcion de cuentas");
+        System.out.println("======================================");
+        System.out.println("Ahorro: " + cuenta1.describir());
+        System.out.println("Corriente: " + cuenta2.describir());
+        System.out.println("Inversion: " + cuenta3.describir());
+
+        System.out.println("======================================");
+        System.out.println("Descripcion de Comisiones");
+        System.out.println("======================================");
+        System.out.println("ComisionCuenta1: $" + cuenta1.calcularComision());
+        System.out.println("ComisionCuenta2: $" + cuenta2.calcularComision());
+        System.out.println("ComisionCuenta3: $" + cuenta3.calcularComision());
+
+        System.out.println("======================================");
+        System.out.println("Descripcion de saldos Finales");
+        System.out.println("======================================");
+        cuenta1.realizarRetiro(500000);
+        cuenta2.realizarRetiro(500000);
+        cuenta3.realizarRetiro(500000);
+
+        System.out.println("SaldoCuenta1: $" + cuenta1.getSaldo());
+        System.out.println("SaldoCuenta2: $" + cuenta2.getSaldo());
+        System.out.println("SaldoCuenta3: $" + cuenta3.getSaldo());
+
     }
+    //usar cuenta bancaria como tipo de variable nos permitio aplicar polimorfismo, ya que una misma referencia
 }
