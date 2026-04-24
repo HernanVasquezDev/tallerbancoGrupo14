@@ -34,5 +34,6 @@ public class Main {
         System.out.println("SaldoCuenta3: $" + cuenta3.getSaldo());
 
     }
-    //usar cuenta bancaria como tipo de variable nos permitio aplicar polimorfismo, ya que una misma referencia
+    //usar cuenta bancaria como tipo de variable nos permitio aplicar polimorfismo, ya que una misma referencia puede apuntar a diferentes tipos de cuentas o clases(ejemplo los tipos de cuentas)
+    //como gran ventaja no necesitamos saber el tipo especifico para ejecutar el comportamiento correcto, porque gracias a los multiples hilos de java lo decide en el mismo tiempo de ejecucion.
 }
